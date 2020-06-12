@@ -1,0 +1,10 @@
+# Go Classes Proof-of-Concept
+
+This little project was created by me to propose a way of doing classes within Go. It features two basic classes `mather.go` and `printer.go` within the `lib` folder which can be easily imported and then initialized in code with a `lib.Mather` or `lib.Printer`.
+
+It gets a bit more complicated when you want to introduce a constructor. That is possible, but it requires a function in the package to run the code and then return the class.
+
+## Quirks
+
+- Constructors don't get to be instantiated with `lib.CLASS` but have to have their `Init()` function called.
+- The `randomizer.go` library will give the same string if the Unix timestamp is the same. This is intended, but is still a quirk because if the app were constantly running, it would be able to keep a randomized seed each time easily.
