@@ -23,7 +23,7 @@ func RandomizerInit() Randomizer {
 }
 
 // RandomLetters is a function that can give us any amount of random letters that we want
-func (r Randomizer) RandomLetters(amount int) string {
+func (r *Randomizer) RandomLetters(amount int) string {
 	var finalString string = ""
 	var arrayLen int = len(r.letters) - 1
 
@@ -37,7 +37,7 @@ func (r Randomizer) RandomLetters(amount int) string {
 }
 
 // UseSeed will return the current seed and make a new seed
-func (r Randomizer) UseSeed() int64 {
+func (r *Randomizer) UseSeed() int64 {
 	// Store our old seed
 	var oldSeed int64 = r.seed
 
@@ -49,11 +49,11 @@ func (r Randomizer) UseSeed() int64 {
 }
 
 // GetSeed will print the current seed used by the randomizer
-func (r Randomizer) GetSeed() int64 {
+func (r *Randomizer) GetSeed() int64 {
 	return r.seed
 }
 
 // GetLetters will show the 52 letters (A-z) that we use to generate our random strings!
-func (r Randomizer) GetLetters() [52]string {
+func (r *Randomizer) GetLetters() [52]string {
 	return r.letters
 }
